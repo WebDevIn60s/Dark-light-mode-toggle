@@ -2,7 +2,14 @@
 
 A modern, fully-featured dark/light mode toggle implementation with smooth transitions, localStorage persistence, and system preference detection.
 
-![Theme Toggle Preview](preview.png)
+## 🚀 Project Preview
+
+<p align="center">
+  <img src="toggle 1.png" width="410"/>
+  <img src="togglw 2.png" width="410"/>
+</p>
+
+----
 
 ## 🌟 Features
 
