@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ThemeToggle</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="theme-switch-wrapper">
+                    <span class="theme-icon" id="themeIcon">☀️</span>
+                    <div class="theme-switch" id="themeToggle" role="button" aria-label="Toggle theme"></div>
+                    <span class="theme-icon" id="themeIconDark">🌙</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>Dark & Light Mode Toggle</h1>
+            <p>Experience seamless theme switching with smooth transitions and persistent user preferences using localStorage.</p>
+        </section>
+
+        <!-- Cards Grid -->
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Beautiful Design</h3>
+                <p>Carefully crafted color palettes for both light and dark themes that are easy on the eyes.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Smooth Transitions</h3>
+                <p>All elements transition smoothly between themes with custom CSS animations.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💾</div>
+                <h3>Persistent Storage</h3>
+                <p>Your theme preference is saved in localStorage and restored on every visit.</p>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h2>Key Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-content">
+                        <h4>CSS Variables</h4>
+                        <p>Utilizes modern CSS custom properties for dynamic theming</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-content">
+                        <h4>Responsive</h4>
+                        <p>Fully responsive design that works on all devices</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-content">
+                        <h4>Easy Integration</h4>
+                        <p>Simple JavaScript implementation with clean code</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">♿</div>
+                    <div class="feature-content">
+                        <h4>Accessible</h4>
+                        <p>Meets accessibility standards with proper contrast ratios</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Section -->
+        <section class="code-section" id="docs">
+            <h3>How It Works</h3>
+            <pre><code>// Toggle theme and save to localStorage
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Load saved theme on page load
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);</code></pre>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="demo-section" id="about">
+            <h2>Try It Out!</h2>
+            <p>Click the toggle in the navigation bar to switch between light and dark modes. Your preference will be saved automatically!</p>
+            <button class="btn" onclick="showAlert()">Get Started</button>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Responsive</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0ms</div>
+                <div class="stat-label">Lag Free</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Performance</div>
+            </div>
+        </section>
+
+        <!-- Info Cards -->
+        <section class="info-section">
+            <div class="info-card">
+                <h3>🌞 Light Mode</h3>
+                <p>Clean and bright interface perfect for daytime use. Easy on the eyes with high contrast ratios.</p>
+            </div>
+            <div class="info-card">
+                <h3>🌙 Dark Mode</h3>
+                <p>Reduces eye strain in low-light environments. Modern dark theme with carefully selected colors.</p>
+            </div>
+            <div class="info-card">
+                <h3>💡 Smart Detection</h3>
+                <p>Automatically detects your system preference on first visit. Manual selection overrides system settings.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with ❤️ using CSS Variables & JavaScript</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">© 2024 ThemeToggle. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
